@@ -30,8 +30,8 @@ console.log('Mail Password: ' + config.get('mail.password'));
 if (app.get('env') === 'development') {
     app.use(morgan('tiny'));
     debug('Morgan enabled...');
-};
+}
 
 // PORT
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
