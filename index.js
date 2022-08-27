@@ -10,6 +10,7 @@ const config = require('config');
 const express = require('express');
 const app = express();
 const genres = require('./routes/genres');
+const customers = require('./routes/customers');
 const home = require('./routes/home');
 const logger = require('./middleware/logger');
 const auth = require('./auth');
