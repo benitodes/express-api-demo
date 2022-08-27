@@ -26,6 +26,7 @@ app.use(express.static('public'));
 app.use(logger);
 app.use(auth);
 app.use('/api/genres', genres);
+app.use('/api/customers', customers);
 app.use('/', home);
 
 // Configuration
