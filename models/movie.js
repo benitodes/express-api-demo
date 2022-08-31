@@ -8,6 +8,10 @@ const movieSchema = new mongoose.Schema({
         minlength: 5,
         maxlength: 50
     }
+    genre: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Genre'
+    }
 })
 
 const Movie = new mongoose.model('Movie', movieSchema);
