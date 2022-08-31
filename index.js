@@ -28,7 +28,7 @@ app.use(logger);
 app.use(auth);
 app.use('/api/genres', genres);
 app.use('/api/customers', customers);
-app.use('api/movies', movies);
+app.use('/api/movies', movies);
 app.use('/', home);
 
 // Configuration
