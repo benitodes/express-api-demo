@@ -17,6 +17,9 @@ const home = require('./routes/home');
 const logger = require('./middleware/logger');
 const auth = require('./auth');
 const morgan = require('morgan');
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi);
+
 
 app.set('view engine', 'pug');
 
