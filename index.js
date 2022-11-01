@@ -5,10 +5,16 @@ mongoose.connect('mongodb://localhost/video-app', { useNewUrlParser: true, useUn
     .catch(err => console.error('Could not connect to MongoDB...'))
 
 
+const config = require('config');
 const debug = require ('debug')('app:startup');
 const config = require('config');
 const express = require('express');
 const app = express();
+
+if (!config.get('jwtPrivateKey')) {
+    console.error('FATAL ERROR: jwtPrivateKey is not defined.');
+    process.exit(1);
+}
 
 // Routes
 
