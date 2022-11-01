@@ -9,14 +9,18 @@ const debug = require ('debug')('app:startup');
 const config = require('config');
 const express = require('express');
 const app = express();
+
+// Routes
+
 const genres = require('./routes/genres');
 const customers = require('./routes/customers');
 const users = require('./routes/users');
 const movies = require('./routes/movies');
 const rentals = require('./routes/rentals');
 const home = require('./routes/home');
+const auth = require('./routes/auth');
+
 const logger = require('./middleware/logger');
-const auth = require('./auth');
 const morgan = require('morgan');
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
@@ -36,6 +40,8 @@ app.use('/api/customers', customers);
 app.use('/api/users', users);
 app.use('/api/movies', movies);
 app.use('/api/rentals', rentals);
+app.use('/api/auth', auth);
+
 app.use('/', home);
 
 // Configuration
