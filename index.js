@@ -7,7 +7,6 @@ mongoose.connect('mongodb://localhost/video-app', { useNewUrlParser: true, useUn
 
 const config = require('config');
 const debug = require ('debug')('app:startup');
-const config = require('config');
 const express = require('express');
 const app = express();
 
@@ -60,6 +59,6 @@ if (app.get('env') === 'development') {
     debug('Morgan enabled...');
 }
 
-// PORT
+PORT
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
