@@ -1,3 +1,3 @@
 {
-    "jwtPrivateKey": "express-demo-jwtPrivateKey"
+    "jwtPrivateKey": "demo_jwtPrivateKey"
 }

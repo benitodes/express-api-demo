@@ -46,19 +46,18 @@ app.use('/api/users', users);
 app.use('/api/movies', movies);
 app.use('/api/rentals', rentals);
 app.use('/api/auth', auth);
-
 app.use('/', home);
 
 // Configuration
 
-console.log('Application Name: ' + config.get('name'));
-console.log('Mail Server: ' + config.get('mail.host'));
+// console.log('Application Name: ' + config.get('name'));
+// console.log('Mail Server: ' + config.get('mail.host'));
 
-if (app.get('env') === 'development') {
-    app.use(morgan('tiny'));
-    debug('Morgan enabled...');
-}
+// if (app.get('env') === 'development') {
+//     app.use(morgan('tiny'));
+//     debug('Morgan enabled...');
+// }
 
-PORT
+//PORT
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
