@@ -13,6 +13,7 @@
     "mongoose": "^6.5.3",
     "morgan": "^1.10.0",
     "pug": "^3.0.2",
-    "response-time": "^2.3.2"
+    "response-time": "^2.3.2",
+    "winston": "^3.8.2"
   }
 }
