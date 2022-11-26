@@ -17,6 +17,7 @@ if (!config.get('jwtPrivateKey')) {
 
 // Routes
 
+const error = require('./middleware/error');
 const genres = require('./routes/genres');
 const customers = require('./routes/customers');
 const users = require('./routes/users');
@@ -47,16 +48,7 @@ app.use('/api/movies', movies);
 app.use('/api/rentals', rentals);
 app.use('/api/auth', auth);
 app.use('/', home);
-
-// Configuration
-
-// console.log('Application Name: ' + config.get('name'));
-// console.log('Mail Server: ' + config.get('mail.host'));
-
-// if (app.get('env') === 'development') {
-//     app.use(morgan('tiny'));
-//     debug('Morgan enabled...');
-// }
+app.use(error);
 
 //PORT
 const port = process.env.PORT || 3000;
