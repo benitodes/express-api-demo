@@ -3,15 +3,13 @@ const admin = require('../middleware/admin')
 const express = require('express');
 const router = express.Router();
 const { Genre, validate } = require('../models/genre');
-const error = require('../middleware/error')
-const asyncMiddleware = require('../middleware/async')
 
 // GET genres Route
 
-router.get('/', asyncMiddleware(async (req, res,) => {
+router.get('/', async (req, res,) => {
         const genres = await Genre.find().sort('name');
         res.send(genres);
-}));
+});
 
 // Get genre route
 
