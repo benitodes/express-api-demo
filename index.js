@@ -17,6 +17,7 @@ const debug = require ('debug')('app:startup');
 const express = require('express');
 const app = express();
 
+winston.handleExceptions(new winston.transports.File({ filename: 'unhandleExceptions.log'}))
 winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 winston.add(new winston.transports.MongoDB({ db: 'mongodb://localhost:27017/video-app' }));
 
@@ -31,7 +32,7 @@ mongoose.connect('mongodb://localhost/video-app', { useNewUrlParser: true, useUn
 if (!config.get('jwtPrivateKey')) {
     console.error('FATAL ERROR: jwtPrivateKey is not defined.');
     process.exit(1);
-}
+    }
 
 // app.set('view engine', 'pug');
 
